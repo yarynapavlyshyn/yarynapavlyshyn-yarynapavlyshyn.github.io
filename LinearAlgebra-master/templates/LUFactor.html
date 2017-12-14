@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <title>Linear algebra project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+             tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+         });
+
+    </script>
+    <script type="text/javascript" async
+            src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <h1 class="text-center">LU-factorization and Inverse </h1>
+    </div>
+    <form method="post" action="/LU">
+        <br>
+        <h2>Please enter matrix:</h2>
+        <textarea name="matrix" rows="5" class="form-control">{% if new_matrix is defined %}
+            {{ matrix }}{% endif %}</textarea><br/>
+        <input class="btn btn-success" type="submit"/>
+    </form>
+
+{% if lower_triangle is defined %}
+    <h4>Lower triangle: {{ lower_triangle }}</h4>
+{% endif %}
+{% if upper_triangle is defined %}
+    <h4>Upper triangle: {{ upper_triangle }}</h4>
+{% endif %}
+{% if inverted is defined %}
+    <h4>Inverted matrix: {{ inverted }}</h4>
+{% endif %}
+{% if invalid is defined %}
+    <h3>{{ invalid }}</h3>
+{% endif %}
+
+
+</div>
+<br>
+<br>
+
+
+
+<!--
+-->
+
+
+<footer class="footer">
+    <div class="container">
+        <h4 class="text-right">Team:</h4>
+        <address class="text-right text-success ">
+            <span class="name">Matt Kovtun</span>
+            <a href="mailto:#">kovtun_m@ucu.edu.ua</a>
+            <br>
+            <span class="name">Yaruna Pavlyshyn</span>
+            <a href="mailto:#">pavlyshyn_y@ucu.edu.ua</a>
+            <br>
+            <span class="name">Vilnitsky</span>
+            <a href="mailto:#">laba@ucu.edu.ua</a>
+            <br>
+            <span class="name">Yasya Shpot</span>
+            <a href="mailto:#">n.y.shpot@ucu.edu.ua</a>
+            <br>
+            <span class="name">Natalia Ivanivna</span>
+            <a href="mailto:#">paranyak@ucu.edu.ua</a>
+            <br>
+            <span class="name">Algorithm</span>
+            <a href="https://en.wikipedia.org/wiki/LU_decomposition">LU decomposition</a>
+        </address>
+    </div>
+</footer>
+</body>
+</html>
